@@ -43,7 +43,6 @@ services:
     volumes:
       - /app/node_modules
       - ./worker:/app
-#Added a comment to delete later
 
 
 
