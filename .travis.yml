@@ -9,14 +9,14 @@ script:
   - docker run darrenreifler/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t darrenreifler/multi-client ./client
-  - docker build -t darrenreifler/multi-nginx ./nginx
-  - docker build -t darrenreifler/multi-server ./server
-  - docker build -t darrenreifler/multi-worker ./worker
+  - docker build -t dreifler/multi-client ./client
+  - docker build -t dreifler/multi-nginx ./nginx
+  - docker build -t dreifler/multi-server ./server
+  - docker build -t dreifler/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login - u "$DOCKER_ID" --password-stdin
 
-  - docker push darrenreifler/multi-client
-  - docker push darrenreifler/multi-nginx
-  - docker push darrenreifler/multi-server
-  - docker push darrenreifler/multi-worker
+  - docker push dreifler/multi-client
+  - docker push dreifler/multi-nginx
+  - docker push dreifler/multi-server
+  - docker push dreifler/multi-worker
