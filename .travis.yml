@@ -15,7 +15,7 @@ after_success:
   - docker build -t dreifler/multi-server ./server
   - docker build -t dreifler/multi-worker ./worker
 
-  - docker login - u "$DOCKER_ID" -p $DOCKER_PASSWORD
+  - docker login -u "$DOCKER_ID" -p $DOCKER_PASSWORD
 
   - docker push dreifler/multi-client
   - docker push dreifler/multi-nginx
