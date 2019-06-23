@@ -21,3 +21,16 @@ after_success:
   - docker push dreifler/multi-nginx
   - docker push dreifler/multi-server
   - docker push dreifler/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
+  app: multi-docker
+  env: multi-docker-env
+  bucket_name: elasticbeanstalk-us-west-2-272800582450
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
